@@ -2,7 +2,7 @@
 	"printWidth": 120,
 	"overrides": [
 		{
-			"files": [".*rc", "*.json"],
+			"files": [".*rc", "*.json", ".*.json"],
 			"options": {
 				"useTabs": true
 			}
