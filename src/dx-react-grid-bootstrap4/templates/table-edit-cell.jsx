@@ -1,4 +1,5 @@
 /* @flow */
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 
 export type Props = {
@@ -10,7 +11,7 @@ export type Props = {
   onValueChange: Function,
   className?: string,
   editingEnabled?: boolean,
-  children?: number | string | React.Element | Array<any>,
+  children?: ReactNode,
 };
 
 export const EditCell = (props: Props) => {

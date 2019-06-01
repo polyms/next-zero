@@ -1,4 +1,5 @@
 /* @flow */
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 import { SortingIndicator } from '../parts/sorting-indicator';
 
@@ -30,7 +31,7 @@ export type Props = {
   column?: Object,
   align?: string,
   direction?: 'asc' | 'desc',
-  children?: number | string | React.Element | Array<any>,
+  children?: ReactNode,
   onSort: Function,
   disabled?: boolean,
   className?: string,

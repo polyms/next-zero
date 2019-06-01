@@ -1,10 +1,11 @@
 /* @flow */
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 
 export type Props = {
   buttonRef: Function,
   onToggle: Function,
-  children?: number | string | React.Element | Array<any>,
+  children?: ReactNode,
   disabled?: boolean,
   className?: string,
 };

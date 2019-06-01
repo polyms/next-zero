@@ -1,4 +1,5 @@
 /* @flow */
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 
 export type CommandButtonProps = {
@@ -30,7 +31,7 @@ CommandButton.defaultProps = {
 };
 
 export type EditCommandHeadingCellProps = {
-  children?: Array<number | string | React.Element | Array<any>> | number | string | React.Element | Array<any>,
+  children?: ReactNode,
   tableColumn?: Object,
   tableRow?: Object,
   className?: string,
@@ -54,7 +55,7 @@ EditCommandHeadingCell.defaultProps = {
 };
 
 export type EditCommandCellProps = {
-  children?: Array<number | string | React.Element | Array<any>> | number | string | React.Element | Array<any>,
+  children?: ReactNode,
   tableColumn?: Object,
   tableRow?: Object,
   row?: any,

@@ -1,10 +1,11 @@
 /* @flow */
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 
 export type Props = {
   column?: Object,
   row?: any,
-  children?: number | string | React.Element | Array<any> | Array<number | string | React.Element | Array<any>>,
+  children?: ReactNode,
   tableRow?: Object,
   tableColumn?: Object,
   className?: string,
