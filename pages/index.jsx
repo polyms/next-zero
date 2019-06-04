@@ -11,7 +11,7 @@ export default connect(
   { setClientState: action }
 )(({ personally, setClientState }) => (
   <div>
-    <div>fromClient: {personally}</div>
+    <div>fromClient: {JSON.stringify(personally)}</div>
     <div>
       <button type="button" onClick={() => setClientState('bar')}>
         Set Client State

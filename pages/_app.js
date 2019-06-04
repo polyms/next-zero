@@ -5,10 +5,17 @@ import React from 'react';
 import App, { Container, type NextAppContext } from 'next/app';
 import Head from 'next/head';
 import { PersistGate } from 'redux-persist/integration/react';
-import withRedux from '../src/lib/with-redux-app';
-import makeStore from '../lib/make-store';
+import NProgress from 'nprogress';
+import Router from 'next/router';
+import withRedux, { type AppProps } from '../src/lib/with-redux-app';
+import makeStore from '../demo/make-store';
+import '../demo/styles/styles.scss';
 
-class MainApp extends App {
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
+
+class MainApp extends App<AppProps> {
   static async getInitialProps({ Component, ctx }: NextAppContext) {
     let pageProps = { name: Component.displayName };
     if (typeof Component.getInitialProps === 'function') {
@@ -28,7 +35,7 @@ class MainApp extends App {
         <Head>
           <title>next-zero framework</title>
         </Head>
-        <PersistGate persistor={store.__persistor} loading={<div>Loading</div>}>
+        <PersistGate persistor={store.__persistor} loading={<div>Loading...</div>}>
           <Component {...pageProps} />
         </PersistGate>
       </Container>

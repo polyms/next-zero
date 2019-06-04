@@ -1,11 +1,12 @@
 /* @flow */
 /* eslint-disable no-console */
 // https://github.com/kirill-konshin/next-redux-wrapper/blob/master/packages/wrapper/src/index.tsx
-import { Component } from 'react';
 import isServer from 'detect-node';
+import { Component } from 'react';
+import { Provider } from 'react-redux';
 import { type NextComponentType, type NextContext } from 'next';
 import { type NextAppContext } from 'next/app';
-import { Provider } from 'react-redux';
+import { type Store } from 'redux';
 
 const defaultConfig: Config = {
   storeKey: '__NEXT_REDUX_STORE__',

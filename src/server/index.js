@@ -1,18 +1,33 @@
 // @flow
 import chalk from 'chalk';
 import Koa from 'koa';
-import koaBody from 'koa-body';
+import bodyParser from 'koa-bodyparser';
 import Router from 'koa-router';
 import nextServer from 'next';
+import apm from 'elastic-apm-node';
 
-export default ({ nextConfig, routers }) => {
-  const { NODE_ENV, PORT } = process.env;
+function handleError(err, ctx) {
+  if (apm.active) {
+    apm.captureError(err);
+  }
+
+  if (ctx == null) {
+    // logger.error({ err, event: 'error' }, 'Unhandled exception occured');
+  }
+}
+
+export default ({ nextConfig, routers, name = 'App' }) => {
+  const { NODE_ENV, PORT = 4000 } = process.env;
   const port = parseInt(PORT, 10);
   const dev = NODE_ENV !== 'production';
   const server = nextServer({ dev, ...nextConfig });
 
   const app = new Koa();
-  app.use(koaBody());
+
+  // Handle uncaught errors
+  app.on('error', handleError);
+
+  app.use(bodyParser());
 
   const router = new Router();
   if (routers) routers(router);
@@ -37,17 +52,17 @@ export default ({ nextConfig, routers }) => {
   app.use(router.routes()).use(router.allowedMethods());
 
   server.prepare().then(() => {
-    app.listen(port, () => {
+    const listener = app.listen(port, () => {
       /* eslint-disable import/no-dynamic-require */
       /* eslint-disable no-console */
       /* eslint-disable global-require */
-
-      const { name } = require(__dirname);
 
       console.log(chalk`{blue ${name}} Start WEB server.`);
       console.log(chalk`{blue ${name}} ENV {green ${app.env}}`);
       console.log(`> Ready on http://localhost:${port}`);
     });
+
+    listener.on('error', handleError);
   });
 
   return { app, next: nextServer };
