@@ -3,7 +3,7 @@ import { applyMiddleware, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { personallyReducer } from '../src/lib/personally-reducer';
-import { type MakeStoreOptions } from '../src/lib/with-redux-app';
+import { type MakeStoreOptions } from '../src/lib';
 
 const makeConfiguredStore = (reducer, initialState = { personally: {} }) =>
   createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)));

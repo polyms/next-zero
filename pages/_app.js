@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { PersistGate } from 'redux-persist/integration/react';
 import NProgress from 'nprogress';
 import Router from 'next/router';
-import withRedux, { type AppProps } from '../src/lib/with-redux-app';
+import { withRedux, type AppProps } from '../src/lib';
 import makeStore from '../demo/make-store';
 import '../demo/styles/styles.scss';
 

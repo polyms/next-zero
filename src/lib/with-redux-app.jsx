@@ -3,7 +3,6 @@
 // https://github.com/kirill-konshin/next-redux-wrapper/blob/master/packages/wrapper/src/index.tsx
 import isServer from 'detect-node';
 import { Component } from 'react';
-import { Provider } from 'react-redux';
 import { type NextComponentType, type NextContext } from 'next';
 import { type NextAppContext } from 'next/app';
 import { type Store } from 'redux';
@@ -15,7 +14,7 @@ const defaultConfig: Config = {
   deserializeState: state => state,
 };
 
-export default (makeStore: MakeStore, customConfig?: Config) => {
+export const withRedux = (makeStore: MakeStore, customConfig?: Config) => {
   const config = {
     ...defaultConfig,
     ...customConfig,
@@ -95,11 +94,7 @@ export default (makeStore: MakeStore, customConfig?: Config) => {
         const { initialProps, initialState, ...props } = this.props;
 
         // Cmp render must return something like <Provider><Component/></Provider>
-        return (
-          <Provider store={this.store}>
-            <App {...props} {...initialProps} store={this.store} />
-          </Provider>
-        );
+        return <App {...props} {...initialProps} store={this.store} />;
       }
     };
 };
