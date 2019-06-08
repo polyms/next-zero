@@ -2,6 +2,9 @@
 var _chalk = _interopRequireDefault(require("chalk"));
 var _koaBodyparser = _interopRequireDefault(require("koa-bodyparser"));
 var _koaRequestId = _interopRequireDefault(require("@kasa/koa-request-id"));
+var _koa = _interopRequireDefault(require("koa"));
+var _koaRouter = _interopRequireDefault(require("koa-router"));
+
 
 var _apmMiddleware = _interopRequireDefault(require("./apm-middleware"));
 var _withNz = _interopRequireDefault(require("./with-nz"));function _templateObject2() {var data = (0, _taggedTemplateLiteral2.default)(["{blue ", "} ENV {green ", "}"]);_templateObject2 = function _templateObject2() {return data;};return data;}function _templateObject() {var data = (0, _taggedTemplateLiteral2.default)(["{blue ", "} Start WEB server."]);_templateObject = function _templateObject() {return data;};return data;}var _default =
@@ -34,9 +37,11 @@ function _default(_ref) {var nextServer = _ref.nextServer,app = _ref.app,router 
 
 
 
-  router.get('*', /*#__PURE__*/function () {var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(ctx) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
-                nextServer.getRequestHandler()(ctx.req, ctx.res));case 2:
-              ctx.respond = false;case 3:case "end":return _context2.stop();}}}, _callee2);}));return function (_x3) {return _ref3.apply(this, arguments);};}());
+  router.get('*', /*#__PURE__*/function () {var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(ctx) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (
+              ctx.body) {_context2.next = 4;break;}_context2.next = 3;return (
+                nextServer.getRequestHandler()(ctx.req, ctx.res));case 3:
+              ctx.respond = false;case 4:case "end":return _context2.stop();}}}, _callee2);}));return function (_x3) {return _ref3.apply(this, arguments);};}());
+
 
 
   return {

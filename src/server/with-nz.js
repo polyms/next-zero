@@ -1,4 +1,3 @@
-const withSass = require('@zeit/next-sass');
 // https://github.com/zeit/next.js/tree/master/examples/analyze-bundles
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const withTM = require('next-transpile-modules');
@@ -20,5 +19,5 @@ const templateConfig = {
 };
 
 module.exports = (nextConfig = {}) => {
-  return withBundleAnalyzer(withTM(withSass(Object.assign({}, templateConfig, nextConfig))));
+  return withBundleAnalyzer(withTM(Object.assign({}, templateConfig, nextConfig)));
 };

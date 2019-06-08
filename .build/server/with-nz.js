@@ -1,5 +1,4 @@
-"use strict";var _interopRequireDefault = require("@babel/runtime-corejs2/helpers/interopRequireDefault");var _assign = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/assign"));var withSass = require('@zeit/next-sass');
-// https://github.com/zeit/next.js/tree/master/examples/analyze-bundles
+"use strict";var _interopRequireDefault = require("@babel/runtime-corejs2/helpers/interopRequireDefault");var _assign = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/assign")); // https://github.com/zeit/next.js/tree/master/examples/analyze-bundles
 var withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 var withTM = require('next-transpile-modules');
 
@@ -20,6 +19,6 @@ var templateConfig = {
 
 
 module.exports = function () {var nextConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return withBundleAnalyzer(withTM(withSass((0, _assign.default)({}, templateConfig, nextConfig))));
+  return withBundleAnalyzer(withTM((0, _assign.default)({}, templateConfig, nextConfig)));
 };
 //# sourceMappingURL=with-nz.js.map

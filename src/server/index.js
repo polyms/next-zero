@@ -2,11 +2,14 @@
 import chalk from 'chalk';
 import bodyParser from 'koa-bodyparser';
 import reqId from '@kasa/koa-request-id';
+import Koa, { type Context } from 'koa';
+import Router from 'koa-router';
+import { type Server } from 'next';
 
 export { default as apmMiddleware } from './apm-middleware';
 export { default as withNZ } from './with-nz';
 
-export default ({ nextServer, app, router, name = 'App' }) => {
+export default ({ nextServer, app, router, name = 'App' }: Props) => {
   const { PORT = 4000 } = process.env;
   const port = parseInt(PORT, 10);
 
@@ -22,7 +25,7 @@ export default ({ nextServer, app, router, name = 'App' }) => {
 
   app.use(reqId());
 
-  app.use(async (ctx, next) => {
+  app.use(async (ctx: Context, next: VoidFunction) => {
     try {
       ctx.res.statusCode = 200;
       await next();
@@ -34,9 +37,11 @@ export default ({ nextServer, app, router, name = 'App' }) => {
     }
   });
 
-  router.get('*', async ctx => {
-    await nextServer.getRequestHandler()(ctx.req, ctx.res);
-    ctx.respond = false;
+  router.get('*', async (ctx: Context) => {
+    if (!ctx.body) {
+      await nextServer.getRequestHandler()(ctx.req, ctx.res);
+      ctx.respond = false;
+    }
   });
 
   return {
@@ -49,4 +54,11 @@ export default ({ nextServer, app, router, name = 'App' }) => {
       console.log(`> Ready on http://localhost:${port}`);
     },
   };
+};
+
+type Props = {
+  app: Koa<object>,
+  router: Router<object>,
+  nextServer: Server,
+  name: string,
 };
