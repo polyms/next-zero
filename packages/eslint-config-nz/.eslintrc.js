@@ -19,7 +19,7 @@ module.exports = {
     node: true,
   },
   parser: 'babel-eslint',
-  plugins: ['flowtype', 'jest', 'prettier'],
+  plugins: ['babel', 'flowtype', 'jest', 'prettier'],
   rules: {
     'class-methods-use-this': OFF,
     'flowtype/no-weak-types': WARNING,
@@ -37,8 +37,6 @@ module.exports = {
     // 'no-restricted-syntax': ['error', 'WithStatement'],
     // 'no-underscore-dangle': OFF,
     // 'no-unused-expressions': OFF,
-    'no-unused-expressions': OFF,
-    'babel/no-unused-expressions': ERROR,
     'no-use-before-define': OFF,
     'prettier/prettier': [
       'error',

@@ -16,6 +16,6 @@ Add to your babel config (`.babelrc`):
 
 ```json
 {
-    "presets": "@next-zero/preset-jsx-flow"
+    "presets": "@next-zero/jsx-flow"
 }
 ```
