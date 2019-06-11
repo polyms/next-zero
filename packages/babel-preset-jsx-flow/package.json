@@ -1,5 +1,5 @@
 {
-    "name": "@lzd/babel-preset-jsx-flow",
+    "name": "@next-zero/babel-preset-jsx-flow",
     "version": "0.2.0",
     "description": "config babel for NextJs",
 	"repository": "https://github.com/vHades0199/next-zero.git",

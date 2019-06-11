@@ -1,11 +1,11 @@
-# @Lyd/eslint-config-nextjs
+# @next-zero/babel-preset-jsx-flow
 
-@Lyd babel preset config for NextJs.
+Babel preset config for next-zero.
 
 ## Installation
 
 ```
-yarn add --dev eslint @lyd/preset-nextjs
+yarn add --dev eslint @next-zero/babel-preset-jsx-flow
 ```
 
 *Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*
@@ -16,6 +16,6 @@ Add to your babel config (`.babelrc`):
 
 ```json
 {
-    "presets": "@lyd/preset-nextjs"
+    "presets": "@next-zero/preset-jsx-flow"
 }
 ```

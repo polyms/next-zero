@@ -1,6 +1,6 @@
-# @Lyd/eslint-config-nextjs
+# @next-zero/eslint-config-nz
 
-@Lyd eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
+Eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
 
 Plugins and configs used:
 * [eslint-config-airbnb](https://yarnpkg.com/en/package/eslint-config-airbnb)
@@ -22,7 +22,7 @@ Additionally, it sets these environments:
 ## Installation
 
 ```
-yarn add --dev eslint @lyd/eslint-config-nextjs
+yarn add --dev eslint @next-zero/eslint-config-nz
 ```
 
 *Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*
@@ -33,7 +33,7 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
 
 ```json
 {
-    "extends": "@lyd/nextjs"
+    "extends": "@next-zero/nz"
 }
 ```
 
@@ -41,7 +41,7 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
 
 ```json
 {
-    "extends": "@lyd/nextjs",
+    "extends": "@next-zero/nz",
     "rules": {
         "global-require": 0,
         "prefer-destructuring": 0
