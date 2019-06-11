@@ -1,0 +1,21 @@
+{
+    "name": "@lzd/babel-preset-jsx-flow",
+    "version": "0.2.0",
+    "description": "config babel for NextJs",
+	"repository": "https://github.com/vHades0199/next-zero.git",
+    "author": "vHades <anhvu.nd.0199@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "^7.4.0",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/plugin-proposal-do-expressions": "^7.2.0",
+        "@babel/plugin-proposal-export-default-from": "^7.2.0",
+        "@babel/plugin-transform-destructuring": "^7.4.4",
+        "@babel/plugin-transform-runtime": "^7.4.4",
+        "@babel/preset-flow": "^7.0.0",
+        "babel-plugin-dynamic-import-node": "^2.2.0",
+        "babel-plugin-flow-react-proptypes": "^25.0.0",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
+    },
+    "gitHead": "22698c399fea52449205c611738be23be1b0264b"
+}

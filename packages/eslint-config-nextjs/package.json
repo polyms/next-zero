@@ -1,0 +1,28 @@
+{
+    "name": "@lzd/eslint-config-nextjs",
+    "version": "0.2.0",
+    "description": "config eslint for NextJS",
+	"repository": "https://github.com/vHades0199/next-zero.git",
+    "author": "vHades <anhvu.nd.0199@gmail.com>",
+    "license": "MIT",
+    "main": ".eslintrc.js",
+    "dependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-flowtype": "^3.4.2",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jest": "^22.4.1",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-prettier": "^3.0.1",
+        "eslint-plugin-react": "^7.12.4",
+        "eslint-restricted-globals": "^0.2.0",
+        "prettier": "^1.16.4"
+    },
+    "devDependencies": {
+        "eslint": "^5.15.3"
+    },
+    "peerDependencies": {
+        "eslint": ">=5"
+    }
+}

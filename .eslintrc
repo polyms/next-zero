@@ -1,4 +1,4 @@
 {
 	"root": true,
-	"extends": ["@lyd/nextjs"]
+	"extends": ["./packages/eslint-config-nextjs/nextjs"]
 }

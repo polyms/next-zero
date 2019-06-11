@@ -1,0 +1,4 @@
+{
+	"packages": ["packages/babel-preset-jsx-flow", "packages/eslint-config-nextjs"],
+	"version": "0.2.0"
+}
