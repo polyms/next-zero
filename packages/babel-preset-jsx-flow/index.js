@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
 
-// const env = process.env.NODE_ENV;
-const isProduction = env === 'production';
+const env = process.env.BABEL_ENV || process.env.NODE_ENV;
+const isProduction = env === "production";
 // const isDevelopment = env === 'development';
-// const isTest = env === 'test';
+const isTest = env === 'test';
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (context, options = {}) => ({
@@ -54,15 +54,15 @@ module.exports = (context, options = {}) => ({
     ],
     require("@babel/plugin-proposal-export-default-from"),
     require("@babel/plugin-transform-flow-strip-types"),
-    isEnvProduction && [
+    isProduction && [
       // Remove PropTypes from production build
       require("babel-plugin-transform-react-remove-prop-types").default,
       {
         removeImport: true
       }
     ],
-    require("@babel/plugin-syntax-dynamic-import").default,
-    isEnvTest &&
+    require("@babel/plugin-syntax-dynamic-import").default
+    isTest &&
       // Transform dynamic import to require
       require("babel-plugin-dynamic-import-node")
   ].filter(Boolean)

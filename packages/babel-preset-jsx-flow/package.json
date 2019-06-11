@@ -1,6 +1,6 @@
 {
     "name": "@next-zero/babel-preset-jsx-flow",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "config babel for NextJs",
     "repository": "https://github.com/vHades0199/next-zero.git",
     "author": "vHades <anhvu.nd.0199@gmail.com>",

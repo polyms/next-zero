@@ -1,6 +1,6 @@
 {
 	"name": "@next-zero/eslint-config-nz",
-	"version": "0.2.3",
+	"version": "0.2.5",
 	"description": "config eslint for NextJS",
 	"repository": "https://github.com/vHades0199/next-zero.git",
 	"author": "vHades <anhvu.nd.0199@gmail.com>",
