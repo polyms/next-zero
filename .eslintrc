@@ -1,4 +1,4 @@
 {
 	"root": true,
-	"extends": ["./packages/eslint-config-nextjs/nextjs"]
+	"extends": ["./packages/eslint-config-nz/.eslintrc.js"]
 }
