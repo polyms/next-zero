@@ -13,7 +13,6 @@
 		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
 		"@babel/plugin-transform-destructuring": "^7.4.4",
 		"@babel/preset-flow": "^7.0.0",
-		"babel-plugin-dynamic-import-node": "^2.2.0",
 		"babel-plugin-flow-react-proptypes": "^25.0.0",
 		"babel-plugin-transform-react-remove-prop-types": "^0.4.24"
 	},

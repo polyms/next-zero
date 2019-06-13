@@ -2,13 +2,14 @@
 
 const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 const isProduction = env === 'production';
-// const isDevelopment = env === 'development';
-const isTest = env === 'test';
+const isDevelopment = env === 'development';
+// const isTest = env === 'test';
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (context, options = {}) => ({
   presets: [require('@babel/preset-flow')],
   plugins: [
+    isDevelopment && require('babel-plugin-flow-react-proptypes'),
     [
       require('@babel/plugin-transform-destructuring').default,
       {
@@ -29,15 +30,15 @@ module.exports = (context, options = {}) => ({
         ],
       },
     ],
-    require('@babel/plugin-proposal-do-expressions'),
+    require('@babel/plugin-proposal-do-expressions').default,
     [
       require('@babel/plugin-proposal-class-properties').default,
       {
         loose: true,
       },
     ],
-    require('@babel/plugin-proposal-export-default-from'),
-    // require("@babel/plugin-transform-flow-strip-types"),
+    require('@babel/plugin-proposal-export-default-from').default,
+    // isProduction && require('@babel/plugin-transform-flow-strip-types'),
     isProduction && [
       // Remove PropTypes from production build
       require('babel-plugin-transform-react-remove-prop-types').default,
@@ -46,8 +47,5 @@ module.exports = (context, options = {}) => ({
       },
     ],
     require('@babel/plugin-syntax-dynamic-import').default,
-    isTest &&
-      // Transform dynamic import to require
-      require('babel-plugin-dynamic-import-node'),
   ].filter(Boolean),
 });
