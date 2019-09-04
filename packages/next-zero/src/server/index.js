@@ -25,24 +25,24 @@ export default ({ nextServer, app, router, name = 'App' }: Props) => {
 
   app.use(reqId());
 
-  app.use(async (ctx: Context, next: VoidFunction) => {
-    try {
-      ctx.res.statusCode = 200;
-      await next();
-    } catch (err) {
-      ctx.status = err.statusCode || err.status || 500;
-      ctx.body = {
-        message: err.message,
-      };
-    }
-  });
+  // app.use(async (ctx: Context, next: VoidFunction) => {
+  //   try {
+  //     ctx.res.statusCode = 200;
+  //     await next();
+  //   } catch (err) {
+  //     ctx.status = err.statusCode || err.status || 500;
+  //     ctx.body = {
+  //       message: err.message,
+  //     };
+  //   }
+  // });
 
-  router.get('*', async (ctx: Context) => {
-    if (!ctx.body) {
-      await nextServer.getRequestHandler()(ctx.req, ctx.res);
-      ctx.respond = false;
-    }
-  });
+  // router.get('*', async (ctx: Context) => {
+  //   // if (!ctx.body) {
+  //     await nextServer.getRequestHandler()(ctx.req, ctx.res);
+  //     ctx.respond = false;
+  //   // }
+  // });
 
   return {
     app,
