@@ -38,14 +38,7 @@ module.exports = (context, options = {}) => ({
       },
     ],
     require('@babel/plugin-proposal-export-default-from').default,
-    // isProduction && require('@babel/plugin-transform-flow-strip-types'),
-    isProduction && [
-      // Remove PropTypes from production build
-      require('babel-plugin-transform-react-remove-prop-types').default,
-      {
-        removeImport: true,
-      },
-    ],
+    isProduction && require('@babel/plugin-transform-flow-strip-types'),
     require('@babel/plugin-syntax-dynamic-import').default,
   ].filter(Boolean),
 });

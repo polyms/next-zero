@@ -6,15 +6,15 @@
 	"author": "vHades <anhvu.nd.0199@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.4.0",
+		"@babel/core": "^7.6.0",
 		"@babel/plugin-proposal-class-properties": "^7.4.4",
 		"@babel/plugin-proposal-do-expressions": "^7.2.0",
 		"@babel/plugin-proposal-export-default-from": "^7.2.0",
 		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
 		"@babel/plugin-transform-destructuring": "^7.4.4",
+		"@babel/plugin-transform-flow-strip-types": "^7.4.4",
 		"@babel/preset-flow": "^7.0.0",
-		"babel-plugin-flow-react-proptypes": "^25.0.0",
-		"babel-plugin-transform-react-remove-prop-types": "^0.4.24"
+		"babel-plugin-flow-react-proptypes": "^25.0.0"
 	},
 	"gitHead": "22698c399fea52449205c611738be23be1b0264b"
 }
