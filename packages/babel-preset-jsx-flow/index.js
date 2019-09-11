@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 
-const env = process.env.BABEL_ENV || process.env.NODE_ENV;
+const env = process.env.BABEL_ENV || process.env.NODE_ENV || 'development';
 const isProduction = env === 'production';
 const isDevelopment = env === 'development';
 // const isTest = env === 'test';

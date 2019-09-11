@@ -21,6 +21,7 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['babel', 'flowtype', 'jest', 'prettier'],
   rules: {
+    'prettier/prettier': ERROR,
     'class-methods-use-this': OFF,
     'flowtype/no-weak-types': WARNING,
     // 'flowtype/require-parameter-type': OFF,
@@ -36,7 +37,7 @@ module.exports = {
     'no-restricted-globals': ['error'].concat(restrictedGlobals),
     // 'no-restricted-syntax': ['error', 'WithStatement'],
     // 'no-underscore-dangle': OFF,
-    // 'no-unused-expressions': OFF,
+    'no-unused-expressions': OFF,
     'no-use-before-define': OFF,
     'prettier/prettier': [
       'error',
