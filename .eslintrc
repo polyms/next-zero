@@ -1,4 +1,4 @@
 {
 	"root": true,
-	"extends": ["./packages/eslint-config-nz/.eslintrc.js"]
+	"extends": ["./packages/eslint-config/.eslintrc.js"]
 }

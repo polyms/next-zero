@@ -58,7 +58,7 @@
 		"@devexpress/dx-react-core": "^2.0.2",
 		"@devexpress/dx-react-grid": "^2.0.2",
 		"@next-zero/babel-preset-jsx-flow": "^0.2.6",
-		"@next-zero/eslint-config-nz": "^0.2.3",
+		"@next-zero/eslint-config": "^0.2.3",
 		"@mdx-js/loader": "^1.0.20",
 		"@next/mdx": "^8.1.0",
 		"@types/koa-router": "^7.0.40",
