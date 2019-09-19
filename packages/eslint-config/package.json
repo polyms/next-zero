@@ -20,9 +20,6 @@
 		"eslint-restricted-globals": "^0.2.0",
 		"prettier": "^1.16.4"
 	},
-	"devDependencies": {
-		"eslint": "^5.15.3"
-	},
 	"peerDependencies": {
 		"eslint": ">=5"
 	}
