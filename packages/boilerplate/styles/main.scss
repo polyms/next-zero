@@ -1,0 +1,13 @@
+@import "~bootstrap-scss/bootstrap";
+
+html,
+body,
+#__next {
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  scrollbar-color: rgba(105, 112, 125, 0.5) transparent;
+  scrollbar-width: thin;
+  width: 100%;
+}

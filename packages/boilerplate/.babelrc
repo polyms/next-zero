@@ -1,0 +1,4 @@
+{
+	"presets": ["next/babel", "@next-zero/jsx-flow"],
+	"retainLines": true
+}

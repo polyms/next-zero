@@ -1,0 +1,31 @@
+{
+  "name": "@next-zero/boilerplate",
+  "version": "0.0.1",
+  "description": "🚀 boilerplate for starting projects in next.js",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:next": "node -r dotenv/config -r @babel/register ./node_modules/.bin/next",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bootstrap-scss": "^4.3.1",
+    "cssnano": "^4.1.10",
+    "next": "^9.0.6",
+    "node-sass": "^4.12.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reactstrap": "^8.0.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@next-zero/babel-preset-jsx-flow": "^0.2.7",
+    "@storybook/react": "^5.2.1",
+    "autoprefixer": "^9.6.1"
+  }
+}
