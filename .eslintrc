@@ -1,4 +1,12 @@
 {
 	"root": true,
-	"extends": ["./packages/eslint-config/.eslintrc.js"]
+	"extends": ["./packages/eslint-config/.eslintrc.js"],
+	// "plugins": ["filenames"],
+	"rules": {
+		// "filenames/match-exported": [2, "kebab"],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{ "devDependencies": ["**/*.stories.*", "**/*.test.*", "**/testing.*"] }
+		]
+	}
 }

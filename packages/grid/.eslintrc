@@ -1,11 +1,6 @@
 {
 	"extends": "../../.eslintrc",
-	"plugins": ["filenames", "jest"],
-	// "parser": "babel-eslint",
-	"rules": {
-		"filenames/match-exported": [2, "kebab"],
-		"import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.*", "**/testing.*"] }]
-	},
+	"plugins": ["jest"],
 	"env": {
 		"jest/globals": true
 	}
