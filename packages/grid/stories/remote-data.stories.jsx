@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { PagingState, SortingState, CustomPaging } from '@devexpress/dx-react-grid';
-import { Grid, Table, TableHeaderRow, PagingPanel } from '../index';
+import { Grid, Table, TableHeaderRow, PagingPanel } from '../src/index';
 
-import { Loading } from '../extensions/loading';
-import { CurrencyTypeProvider } from '../extensions/currency-type-provider';
+import { Loading } from '../src/extensions/loading';
+import { CurrencyTypeProvider } from '../src/extensions/currency-type-provider';
 
 const URL = 'https://js.devexpress.com/Demos/WidgetsGallery/data/orderItems';
 
@@ -87,3 +87,5 @@ export const RemoteData = () => {
     </div>
   );
 };
+
+export default { title: 'Demos|Remote data', parameters: { jest: ['group-panel-container'] } };

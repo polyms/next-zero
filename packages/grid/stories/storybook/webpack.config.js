@@ -7,10 +7,11 @@ module.exports = async ({ config, mode }) => {
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
+
   config.module.rules.push({
-    test: /\.scss$/,
+    test: /\.s[ca]ss$/,
     use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
+    // include: path.resolve(__dirname, '../'),
   });
 
   // Return the altered config

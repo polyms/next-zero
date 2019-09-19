@@ -24,15 +24,15 @@ import {
   TableColumnReordering,
   Toolbar,
   SearchPanel,
-} from '../index';
+} from '../src/index';
 
-import { ProgressBarCell } from '../extensions/progress-bar-cell';
-import { HighlightedCell } from '../extensions/highlighted-cell';
-import { CurrencyTypeProvider } from '../extensions/currency-type-provider';
-import { PercentTypeProvider } from '../extensions/percent-type-provider';
-import { BooleanTypeProvider } from '../extensions/boolean-type-provider';
+import { ProgressBarCell } from '../src/extensions/progress-bar-cell';
+import { HighlightedCell } from '../src/extensions/highlighted-cell';
+import { CurrencyTypeProvider } from '../src/extensions/currency-type-provider';
+import { PercentTypeProvider } from '../src/extensions/percent-type-provider';
+import { BooleanTypeProvider } from '../src/extensions/boolean-type-provider';
 
-import { generateRows, globalSalesValues } from './generator';
+import { generateRows, globalSalesValues } from './storybook/generator';
 
 const Cell = (props: Table.DataCellProps) => {
   const { column } = props;
@@ -107,3 +107,5 @@ export const VirtualScroll = () => {
     </Grid>
   );
 };
+
+export default { title: 'Demos|Virtual scroll', parameters: { jest: ['group-panel-container'] } };
