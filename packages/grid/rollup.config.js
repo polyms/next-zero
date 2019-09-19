@@ -1,8 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import babel from 'rollup-plugin-babel';
 import license from 'rollup-plugin-license';
 import resolve from 'rollup-plugin-node-resolve';
 import sass from 'rollup-plugin-sass';
-import { banner, external, globals, stubProcess } from '../../tools/rollup-utils';
+import { banner, external, globals, stubProcess } from './rollup-utils';
 import pkg from './package.json';
 
 export default {
