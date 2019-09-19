@@ -63,6 +63,7 @@
 		"babel-loader": "^8.0.6",
 		"babel-plugin-transform-react-remove-prop-types": "^0.4.24",
 		"core-js": "^3.2.1",
+		"css-loader": "^3.2.0",
 		"enzyme": "3.10.0",
 		"enzyme-adapter-react-16": "^1.14.0",
 		"jest": "^24.9.0",
@@ -73,7 +74,9 @@
 		"rollup-plugin-babel": "^4.3.3",
 		"rollup-plugin-license": "^0.12.1",
 		"rollup-plugin-node-resolve": "^5.2.0",
-		"rollup-plugin-sass": "^1.2.2"
+		"rollup-plugin-sass": "^1.2.2",
+		"sass-loader": "^8.0.0",
+		"style-loader": "^1.0.0"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.18",
