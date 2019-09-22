@@ -1,6 +1,6 @@
 {
 	"name": "@next-zero/framework",
-	"version": "0.1.0",
+	"version": "0.1.0-1",
 	"description": "web base framework with koa, next.js",
 	"repository": "https://github.com/vHades0199/next-zero.git",
 	"author": "vHades <anhvu.nd.0199@gmail.com>",
@@ -52,9 +52,9 @@
 		"@devexpress/dx-grid-core": "^2.0.2",
 		"@devexpress/dx-react-core": "^2.0.2",
 		"@devexpress/dx-react-grid": "^2.0.2",
+		"@mdx-js/loader": "^1.0.20",
 		"@next-zero/babel-preset-jsx-flow": "^0.2.7",
 		"@next-zero/eslint-config": "^0.2.7",
-		"@mdx-js/loader": "^1.0.20",
 		"@next/mdx": "^8.1.0",
 		"@types/koa-router": "^7.0.40",
 		"@types/next": "^8.0.5",
