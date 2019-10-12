@@ -1,6 +1,16 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash, faSave, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+const iconButton = {
+  Edit: faEdit,
+  New: faPlus,
+  Delete: faTrash,
+  Save: faSave,
+  Cancel: faTrash,
+};
 
 export const CommandButton = ({ onExecute, text, className, ...restProps }) => (
   <button
@@ -12,7 +22,7 @@ export const CommandButton = ({ onExecute, text, className, ...restProps }) => (
     }}
     {...restProps}
   >
-    {text}
+    <FontAwesomeIcon icon={iconButton[text]} />
   </button>
 );
 
@@ -34,7 +44,9 @@ export const EditCommandHeadingCell = ({ children, className, tableColumn, table
 
 EditCommandHeadingCell.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  // eslint-disable-next-line react/forbid-prop-types
   tableColumn: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
   tableRow: PropTypes.object,
   className: PropTypes.string,
 };
@@ -54,8 +66,11 @@ export const EditCommandCell = ({ tableColumn, tableRow, row, children, classNam
 
 EditCommandCell.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  // eslint-disable-next-line react/forbid-prop-types
   tableColumn: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
   tableRow: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
   row: PropTypes.any,
   className: PropTypes.string,
 };

@@ -6,7 +6,7 @@ import { withCssResources } from '@storybook/addon-cssresources';
 import results from './.jest-test-results.json';
 
 // configure(require.context('../../src', true, /\.stories\.jsx$/), module);
-configure(require.context('../../stories', true, /\.stories\.(jsx|mdx)$/), module);
+configure(require.context('../../', true, /\.stories\.(jsx|mdx)$/), module);
 
 addDecorator(withCssResources);
 

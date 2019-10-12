@@ -88,4 +88,4 @@ export const RemoteData = () => {
   );
 };
 
-export default { title: 'Demos|Remote data', parameters: { jest: ['group-panel-container'] } };
+export default { title: 'Demos|Remote data' };

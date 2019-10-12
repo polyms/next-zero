@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { handpointer } from '@fortawesome/free-solid-svg-icons';
 
 const AVAILABLE_PATHS = {
   contains:
@@ -25,7 +27,7 @@ const AVAILABLE_PATHS = {
 export const Icon = React.memo(({ type, className, ...restProps }) => {
   const path = AVAILABLE_PATHS[type];
   return path ? (
-    <svg className={classNames('d-block dx-g-nz-filter-selector-icon', className)} viewBox="0 0 32 32" {...restProps}>
+    <svg className={classNames('', className)} viewBox="0 0 32 32" {...restProps}>
       <path d={path} />
     </svg>
   ) : (
