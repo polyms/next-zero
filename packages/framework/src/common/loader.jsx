@@ -1,75 +1,61 @@
 /* @flow */
-import withStyles from 'react-jss';
-import { PureComponent, type ReactNode } from 'react';
+import { useEffect, useCallback, useState, useRef } from 'react';
 import classnames from 'classnames';
 import { PulseLoader, ScaleLoader } from 'react-spinners';
-
-const styles = withStyles({
-  loader: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    background: 'rgba(0,0,0,.7)',
-    'z-index': 2000,
-  },
-});
+import styled from 'styled-components';
 
 type LoaderProps = {
+  scrollTarget?: string,
   className?: string,
   loading: boolean,
 };
 
-class Loader extends PureComponent<LoaderProps> {
-  state = {};
+const Loader: SFC<LoaderProps> = ({ scrollTarget, className, loading }: LoaderProps) => {
+  const loaderRef = useRef();
+  const [top, setTop] = useState(0);
 
-  componentDidMount() {
-    this.loaderElem.parentElement.addEventListener('scroll', this.handleScrollChange);
-  }
-
-  componentWillUnmount() {
-    this.loaderElem.parentElement.removeEventListener('scroll', this.handleScrollChange);
-  }
-
-  handleScrollChange = ({ target }) => {
+  const handleScrollChange = useCallback(({ target }) => {
     // eslint-disable-next-line react/no-unused-state
-    this.setState({ top: target.scrollTop });
-  };
+    setTop(target.scrollTop);
+  });
 
-  render() {
-    const { className, loading } = this.props;
-    return (
-      <div
-        className={classnames('d-flex justify-content-center align-items-center', className, {
-          invisible: !loading,
-        })}
-        style={this.state}
-        /* eslint-disable-next-line no-return-assign */
-        ref={ref => (this.loaderElem = ref)}
-      >
-        <PulseLoader size={15} color="#36D7B7" loading />
-      </div>
-    );
-  }
-}
-Loader.defaultProps = {
-  className: undefined,
-};
+  useEffect(() => {
+    let ref = loaderRef.current.parentElement;
+    if (scrollTarget) ref = document.getElementById(scrollTarget);
+    ref.addEventListener('scroll', handleScrollChange);
 
-type OverlayWrapperProps = {
-  children: ReactNode,
-  classes: object,
-};
+    return () => {
+      ref.removeEventListener('scroll', handleScrollChange);
+    };
+  }, [handleScrollChange, scrollTarget]);
 
-const OverlayWrapper = ({ children, classes, ...props }: OverlayWrapperProps) => {
   return (
-    <>
-      {/* eslint-disable-next-line no-return-assign */}
-      <Loader className={classes.loader} {...props} />
-      {children}
-    </>
+    <div
+      className={classnames('d-flex justify-content-center align-items-center', className, {
+        invisible: !loading,
+      })}
+      style={{ top }}
+      ref={loaderRef}
+      /* eslint-disable-next-line no-return-assign */
+    >
+      <PulseLoader size={15} color="#36D7B7" loading />
+    </div>
   );
 };
-export const OverlayLoader = styles(OverlayWrapper);
+Loader.defaultProps = {
+  className: undefined,
+  scrollTarget: undefined,
+};
+
+export const OverlayLoader = styled(Loader)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 2000;
+`;
 
 export function PageLoader(props) {
   return (

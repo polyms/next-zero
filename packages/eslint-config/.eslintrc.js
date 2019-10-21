@@ -50,7 +50,8 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       { devDependencies: ["**/*.stories.*", "**/*.test.*", "**/testing.*"] }
-    ]
+    ],
+    "react/jsx-props-no-spreading": OFF,
     // 'react/prefer-stateless-function': OFF,
     // 'react/sort-comp': OFF,
     // 'react/destructuring-assignment': OFF,

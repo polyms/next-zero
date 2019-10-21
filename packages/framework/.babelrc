@@ -1,4 +1,4 @@
 {
-	"presets": ["next/babel", "@next-zero/babel-preset-jsx-flow"],
+	"presets": ["next/babel", "@next-zero/jsx-flow"],
 	"retainLines": true
 }

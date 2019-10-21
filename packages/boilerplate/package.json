@@ -21,7 +21,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "reactstrap": "^8.0.1",
-    "styled-components": "^4.3.2"
+		"styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@next-zero/babel-preset-jsx-flow": "^0.2.7",
