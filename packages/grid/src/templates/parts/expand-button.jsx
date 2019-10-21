@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const ENTER_KEY_CODE = 13;
 const SPACE_KEY_CODE = 32;
@@ -28,12 +30,11 @@ export const ExpandButton = ({ visible, expanded, onToggle, className, ...restPr
     }
   };
   return (
-    <i
+    <FontAwesomeIcon
+      icon={expanded ? faChevronRight : faChevronDown}
       className={classNames(
         {
-          'oi p-2 text-center dx-g-nz-toggle-button': true,
-          'oi-chevron-bottom': expanded,
-          'oi-chevron-right': !expanded,
+          'p-2 text-center dx-g-nz-toggle-button': true,
           'dx-g-nz-toggle-button-hidden': !visible,
         },
         className

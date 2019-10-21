@@ -1,14 +1,15 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltUp, faLongArrowAltDown } from '@fortawesome/free-solid-svg-icons';
 
 export const SortingIndicator = React.memo(({ direction, className }) => (
-  <span
+  <FontAwesomeIcon
+    icon={direction === 'desc' ? faLongArrowAltDown : faLongArrowAltUp}
     className={classNames(
       {
-        'oi dx-g-nz-sorting-indicator mx-2': true,
-        'oi-arrow-thick-bottom': direction === 'desc',
-        'oi-arrow-thick-top': direction !== 'desc',
+        'dx-g-nz-sorting-indicator mx-2': true,
         invisible: !direction,
       },
       className
