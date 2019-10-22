@@ -1,1 +1,1 @@
-module.exports = require('./.build/redux');
+module.exports = require('./src/redux');
