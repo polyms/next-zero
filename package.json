@@ -8,22 +8,21 @@
 	"private": true,
 	"scripts": {},
 	"devDependencies": {
-		"@babel/cli": "^7.6.2",
-		"@babel/core": "^7.6.2",
-		"@babel/node": "^7.6.2",
+		"@babel/cli": "^7.7.4",
+		"@babel/core": "^7.7.4",
+		"@babel/node": "^7.7.4",
 		"@types/koa-router": "^7.0.42",
 		"@types/next": "^9.0.0",
 		"@types/react": "^16.9.15",
 		"@types/react-redux": "^7.1.5",
 		"@types/reactstrap": "^8.0.6",
-		"eslint": "^6",
-		"koa": "^2.8.1",
-		"prettier": "^1.18.2",
-		"prettier-eslint": "^9.0.0",
+		"eslint": "^6.7.2",
+		"prettier": "^1.19.1",
+		"prettier-eslint": "^9.0.1",
 		"stylelint": "^10.1.0",
 		"stylelint-prettier": "1.1.1",
-		"stylelint-config-prettier": "^5.2.0",
-		"stylelint-config-sass-guidelines": "^6.0.0"
+		"stylelint-config-prettier": "^7.0.0",
+		"stylelint-config-sass-guidelines": "^6.2.0"
 	},
 	"workspaces": [
 		"packages/**"

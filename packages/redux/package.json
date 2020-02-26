@@ -1,6 +1,6 @@
 {
 	"name": "@next-zero/redux",
-	"version": "0.0.2-0",
+	"version": "0.0.2-1",
 	"description": "redux toolkit",
 	"repository": "https://github.com/vHades0199/next-zero.git",
 	"author": "vHades <anhvu.nd.0199@gmail.com>",
