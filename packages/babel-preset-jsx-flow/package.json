@@ -6,14 +6,14 @@
 	"author": "vHades <anhvu.nd.0199@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.9.0",
-		"@babel/plugin-proposal-class-properties": "^7.8.3",
-		"@babel/plugin-proposal-do-expressions": "^7.8.3",
-		"@babel/plugin-proposal-export-default-from": "^7.8.3",
+		"@babel/core": "^7.11.4",
+		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/plugin-proposal-do-expressions": "^7.10.4",
+		"@babel/plugin-proposal-export-default-from": "^7.10.4",
 		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
-		"@babel/plugin-transform-destructuring": "^7.8.8",
-		"@babel/plugin-transform-flow-strip-types": "^7.9.0",
-		"@babel/preset-flow": "^7.9.0",
-		"babel-plugin-flow-react-proptypes": "^25.1.0"
+		"@babel/plugin-transform-destructuring": "^7.10.4",
+		"@babel/plugin-transform-flow-strip-types": "^7.10.4",
+		"@babel/preset-flow": "^7.10.4",
+		"babel-plugin-flow-react-proptypes": "^26.0.0"
 	}
 }
