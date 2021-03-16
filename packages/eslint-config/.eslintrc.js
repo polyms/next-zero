@@ -8,7 +8,6 @@ module.exports = {
   extends: [
     "airbnb",
     "plugin:flowtype/recommended",
-    "plugin:jest/recommended",
     "prettier",
     "prettier/flowtype",
     "prettier/react"
@@ -19,7 +18,7 @@ module.exports = {
     node: true
   },
   parser: "babel-eslint",
-  plugins: ["babel", "flowtype", "jest", "prettier"],
+  plugins: ["babel", "flowtype", "prettier"],
   rules: {
     "class-methods-use-this": OFF,
     "flowtype/no-weak-types": WARNING,
