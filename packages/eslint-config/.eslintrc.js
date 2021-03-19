@@ -9,7 +9,6 @@ module.exports = {
     "airbnb",
     "plugin:flowtype/recommended",
     "prettier",
-    "prettier/flowtype",
     "prettier/react"
   ],
   env: {
